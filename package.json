@@ -1,0 +1,11 @@
+{
+  "name": "net.atlasauth.sdk",
+  "displayName": "Atlas Auth",
+  "version": "0.1.0",
+  "unity": "2021.3",
+  "description": "Sign players in with Atlas: system-browser sign-in (PKCE), device flow, passkeys through the hosted page, and token storage.",
+  "keywords": ["auth", "atlas", "oauth", "oidc", "passkeys"],
+  "license": "MIT",
+  "author": { "name": "Atlas" },
+  "repository": { "type": "git", "url": "https://github.com/Atlas-Authorization/atlas-unity.git" }
+}
