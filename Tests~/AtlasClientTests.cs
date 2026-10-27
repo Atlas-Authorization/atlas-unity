@@ -116,7 +116,7 @@ public class AtlasClientTests
     public async Task SignOutClearsLocallyAndRevokes()
     {
         var (c, t, store, _) = Make();
-        store.Save(new AtlasTokens { AccessToken = "a", RefreshToken = "rt", ExpiresAt = long.MaxValue }.ToJson());
+        store.Save(new AtlasTokens { AccessToken = "a", RefreshToken = "rt", ExpiresAt = 4102444800 }.ToJson());
         t.Replies.Enqueue(R(200, "{}"));
         await c.SignOutAsync();
         Assert.Null(store.Load());
@@ -127,7 +127,7 @@ public class AtlasClientTests
     public async Task UserInfoSendsBearer()
     {
         var (c, t, store, _) = Make();
-        store.Save(new AtlasTokens { AccessToken = "a", ExpiresAt = long.MaxValue }.ToJson());
+        store.Save(new AtlasTokens { AccessToken = "a", ExpiresAt = 4102444800 }.ToJson());
         t.Replies.Enqueue(R(200, "{\"sub\":\"user_1\",\"email_verified\":true}"));
         var info = await c.GetUserInfoAsync();
         Assert.Equal("user_1", MiniJson.Str(info, "sub"));
